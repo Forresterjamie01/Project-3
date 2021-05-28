@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const models = require ("./models");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -17,7 +18,7 @@ app.get("/api/user", function (req, res){
 })
 
 app.get("/api/user/collaborator", function (req, res){
-  console.log("Yep inside here")
+ 
   console.log(req.query)
   res.json([])
 })
