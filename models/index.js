@@ -1,6 +1,6 @@
-const user = require("./User");
-const userconnections = require("./UserConnection");
+const User = require("./User");
+const UserConnection = require("./UserConnection");
 
 
 
-module.exports = { user, userconnections};
+module.exports = { User, UserConnection};
