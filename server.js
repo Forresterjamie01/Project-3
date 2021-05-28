@@ -16,31 +16,41 @@ app.get("/api/user", function (req, res){
   res.json([])
 })
 
+app.get("/api/user/collaborator", function (req, res){
+  console.log("Yep inside here")
+  console.log(req.query)
+  res.json([])
+})
+
 app.get("/api/user/:id", function (req, res){
+  console.log(req.params)
   res.json([])
 })
 
 app.post("/api/signup", function (req, res){
+  console.log(req.body)
   res.json([])
 })
 
 app.post("/api/login", function (req, res){
+  console.log(req.body)
   res.json([])
 })
 
-app.get("/api/users/collaborator?pm=true&me=true&m=true&vp=true&location=<nameofpalce>”", function (req, res){
-  res.json([])
-})
+
 
 app.post("/api/connect", function (req, res){
+  console.log(req.body)
   res.json([])
 })
 
 app.post("/api/user/:id/connect/:connectID", function (req, res){
+  console.log(req.params)
   res.json([])
 })
 
 app.get("/api/user/:id/connections", function (req, res){
+  console.log(req.params)
   res.json([])
 })
 
