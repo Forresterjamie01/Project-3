@@ -31,33 +31,32 @@ app.get("/api/user/collaborator", function (req, res){
 
 app.get("/api/user/:id", function (req, res){
   console.log(req.params)
+  //sequelize db query find by primary key
   res.json([])
 })
 
 app.post("/api/signup", function (req, res){
   console.log(req.body)
+  //sequelize create for user 
   res.json([])
 })
 
 app.post("/api/login", function (req, res){
   console.log(req.body)
+  //find one 
   res.json([])
 })
 
-
-
-app.post("/api/connect", function (req, res){
-  console.log(req.body)
-  res.json([])
-})
 
 app.post("/api/user/:id/connect/:connectID", function (req, res){
   console.log(req.params)
+    //userconnection.create userid and connection id 
   res.json([])
 })
 
 app.get("/api/user/:id/connections", function (req, res){
   console.log(req.params)
+  // get request --user.find all find how to include all connections 
   res.json([])
 })
 
