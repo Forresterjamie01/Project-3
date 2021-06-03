@@ -5,8 +5,8 @@ class SignupPage extends React.Component {
 
   }
   render() {
-    return (<main>
-      <div id="second">
+    return (<body>
+      <div id="second align-items-center">
         <div class="myform form ">
           <div class="logo mb-3">
             <div class="col-md-12 text-center">
@@ -15,16 +15,12 @@ class SignupPage extends React.Component {
           </div>
           <form action="#" name="registration">
             <div class="form-group">
-              <label for="exampleInputEmail1">First Name</label>
-              <input type="text" name="firstname" class="form-control" id="firstname" aria-describedby="emailHelp" placeholder="Enter Firstname"></input>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Last Name</label>
-              <input type="text" name="lastname" class="form-control" id="lastname" aria-describedby="emailHelp" placeholder="Enter Lastname"></input>
+              <label for="exampleInputEmail1">Name</label>
+              <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Name"></input>
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Email address</label>
-              <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"></input>
+              <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email"></input>
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Password</label>
@@ -33,13 +29,34 @@ class SignupPage extends React.Component {
             <div class="col-12">
             <div class="form-group">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required></input>
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2"></input>
                 <label class="form-check-label" for="invalidCheck2">
-                  Accetta le condizioni
+                  Mastering
                 </label>
               </div>
             </div>
             </div>
+            <div class="col-12">
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2"></input>
+                <label class="form-check-label" for="invalidCheck2">
+                  Mixing
+                </label>
+              </div>
+            </div>
+            </div>
+            <div class="col-12">
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" ></input>
+                <label class="form-check-label" for="invalidCheck2">
+                  Production
+                </label>
+              </div>
+            </div>
+            </div>
+            
 
 
 
@@ -48,14 +65,14 @@ class SignupPage extends React.Component {
             </div>
             <div class="col-md-12 ">
               <div class="form-group">
-                <p class="text-center"><a href="#" id="signin">Already have an account?</a></p>
+                <p class="text-center"><a href="/" id="signin">Already have an account?</a></p>
               </div>
             </div>
           </form>
         </div>
       </div>
 
-    </main>)
+    </body>)
   }
 }
 
