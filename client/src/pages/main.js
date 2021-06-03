@@ -1,6 +1,6 @@
 import React from "react";
 
-class main extends React.Component{
+class Main extends React.Component{
     state={
 
     }
@@ -17,4 +17,4 @@ class main extends React.Component{
     }
 }
 
-export default main;
+export default Main;

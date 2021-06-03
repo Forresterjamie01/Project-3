@@ -1,7 +1,7 @@
 import React from "react";
 import Axios from "axios";
 
-class Saved extends React.Component{
+class Connections extends React.Component{
     state={
 savebooks:[]
     }
@@ -35,4 +35,4 @@ savebooks:[]
     }
 }
 
-export default Saved;
+export default Connections;

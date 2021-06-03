@@ -3,9 +3,9 @@ import React from "react";
 function footer() {
   return (
     <div
-      className="border border-success"
+      className=" border border-success"
     >
-        &copy; Jamie Forrester
+        &copy; Designed by: Jamie Forrester
     </div>
   );
 }

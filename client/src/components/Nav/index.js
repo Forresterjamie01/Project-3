@@ -21,9 +21,7 @@ function Nav() {
           <li class="nav-item">
             <a class="nav-link" href="/Search">Work</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"></a>
-          </li>
+       
         
         </ul>
         <form class="d-flex">
