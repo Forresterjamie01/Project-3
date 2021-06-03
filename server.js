@@ -5,6 +5,9 @@ const app = express();
 const db = require ("./models");
 const sequelize = require("./config/connection");
 
+
+
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -18,47 +21,68 @@ app.get("/api/user", function (req, res){
   db.User.findAll().then(function(userData){
     console.log("userData"),
     console.log(userData)
-
+    res.json(userData);
   })
-  res.json([])
-})
+  
+});
 
-app.get("/api/user/collaborator", function (req, res){
+// app.get("/api/user/collaborator", function (req, res){
  
-  console.log(req.query)
-  res.json([])
-})
+//   console.log(req.query)
+//   res.json([])
+// })
 
 app.get("/api/user/:id", function (req, res){
   console.log(req.params)
+  db.User.findByPk(req.params.id)
+  .then(function(data) {
+    console.log(data);
+  
   //sequelize db query find by primary key
-  res.json([])
+  res.json(data)})
 })
 
+
 app.post("/api/signup", function (req, res){
-  console.log(req.body)
-  //sequelize create for user 
-  res.json([])
-})
+  console.log("posr",req.body);
+
+  db.User.create(req.body).then (function (response){
+      console.log(response)
+      res.json (response)
+  }).catch(function(error) {
+      throw error
+  });
+});
 
 app.post("/api/login", function (req, res){
   console.log(req.body)
   //find one 
-  res.json([])
-})
+  db.User.findOne({ where: { email: req.body.email} }).then(function(userData){
+    if (userData.password === req.body.password){
+      res.json({login: true})
+      //do we store passwords as plain text? Yes
+    }else {
+      res.json({login: false})
+    }
+  });
+});
 
 
-app.post("/api/user/:id/connect/:connectID", function (req, res){
-  console.log(req.params)
-    //userconnection.create userid and connection id 
-  res.json([])
-})
+// app.post("/api/user/:id/connect/:connectID", function (req, res){
+//   console.log(req.params)
+//     //userconnection.create userid and connection id 
+//   res.json([])
+// })
 
 app.get("/api/user/:id/connections", function (req, res){
-  console.log(req.params)
   // get request --user.find all find how to include all connections 
-  res.json([])
+  db.User.findAll().then (function (response){
+    console.log(response)
+    res.json (response)
+}).catch(function(error) {
+    throw error
 })
+});
 
 
 // Send every other request to the React app

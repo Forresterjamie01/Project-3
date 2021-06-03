@@ -14,11 +14,11 @@ User.init(
             primaryKey: true,
             autoIncrement: true
           },
-          Name: {
+          name: {
             type: DataTypes.STRING,
             allowNull: false
           },
-          Email: {
+          email: {
             type: DataTypes.STRING,
             allowNull: false,
             unique: true,
@@ -26,26 +26,26 @@ User.init(
                 isEmail: true
               }
             },
-            Password: {
+            password: {
                 type: DataTypes.STRING,
                 allowNull: false,
                 unique: true
             },
-            Location: {
+            location: {
                 type: DataTypes.STRING,
                 allowNull: false,
             },
-            Mastering: {
+            mastering: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false,
                 
             },
-            Mixing: {
+            mixing: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false,
                 
             },
-            Production: {
+            production: {
                 type: DataTypes.BOOLEAN,
                 defaultValue: false,
                 
