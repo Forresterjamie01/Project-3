@@ -1,20 +1,34 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
+import React from "react";
+import { BrowserRouter, Switch, Route} from "react-router-dom";
+import SavedBooks from "./pages/connections";
+import SearchBooks from "./pages/search";
+import HomePage from "./pages/main";
+import Footer from "./components/footer";
 import "./App.css";
+import Jumbotron from "./components/Jumbotron";
+import Nav from "./components/Nav";
+
 
 function App() {
   return (
     <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to React</h2>
-      </div>
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
+     <BrowserRouter>
+      <Nav />
+      <Jumbotron>
+        <h1>Google Books Search</h1>
+        <p>Using Google API</p>
+      </Jumbotron>
+      <Switch>
+        <Route exact path="/Saved"><SavedBooks/></Route>
+        <Route exact path="/Search"><SearchBooks/></Route>
+        <Route exact path="/"><HomePage /></Route>
+      </Switch>
+      <Footer/>
+      </BrowserRouter> 
     </div>
   );
 }
+
 
 
 export default App;
