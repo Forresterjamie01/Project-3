@@ -7,6 +7,7 @@ function SignupPage(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [location, setLocation] = useState("");
   const [mastering, setMastering] = useState("");
   const [mixing, setMixing] = useState("");
   const [production, setProduction] = useState("");
@@ -35,6 +36,11 @@ function SignupPage(props) {
     setPassword(event.target.value)
   }
 
+  const handleLocationchange = (event) => {
+
+    setLocation(event.target.value)
+  }
+
 
   const handleMasteringchange = (event) => {
 
@@ -55,13 +61,14 @@ function SignupPage(props) {
 
 
   /// a functon to handle the form submission
-  const handleFormSubmit = () => {
+  const handleFormSubmit = (event) => {
+    event.preventDefault()
     //we need to get the values of name, email, password, mastering, mixing, production
     if (!name) {
       return;
     }
 
-    API.signup({ name: name, email: email, password: password, mastering: mastering, mixing: mixing, production: production })
+    API.signup({ name: name, email: email, password: password, location: location, mastering: false, mixing: false, production: false })
       .then(res => {
         // if (res.data.length === 0) {
         //   throw new Error("No results found.");
@@ -72,6 +79,7 @@ function SignupPage(props) {
         if (res.signup) {
           props.setSignedup(true);
         }
+        window.location.href = "/search"
         // setEmail(res.data[1]);
         // setPassword(res.data[2][0]);
 
@@ -97,7 +105,7 @@ function SignupPage(props) {
         </div>
         <form action="#" name="registration">
           <div class="form-group">
-            <label for="exampleInputEmail1">Name</label>
+            <label for="exampleInputName">Name</label>
             <input type="text" name="name" value={name} onChange={handleNamechange} class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Name"></input>
           </div>
           <div class="form-group">
@@ -105,8 +113,12 @@ function SignupPage(props) {
             <input type="email" name="email" value={email} onChange={handleEmailchange} class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email"></input>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Password</label>
-            <input type="password" name="password" value={password} onChange={handlePasswordchange} id="password" class="form-control" aria-describedby="emailHelp" placeholder="Enter Password"></input>
+            <label for="exampleInputPassword">Password</label>
+            <input type="password" name="password" value={password} onChange={handlePasswordchange} id="password" class="form-control" aria-describedby="passwordhelp" placeholder="Enter Password"></input>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputLocation">Location</label>
+            <input type="text" name="location" value={location} onChange={handleLocationchange} id="password" class="form-control" aria-describedby="locationhelp" placeholder="Enter Location"></input>
           </div>
           <div class="col-12">
             <div class="form-group">
@@ -140,7 +152,7 @@ function SignupPage(props) {
 
 
           <div class="col-md-12 text-center mb-3">
-            <button type="submit" onClick={handleFormSubmit} class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
+            <button type="button" onClick={handleFormSubmit} class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
           </div>
           <div class="col-md-12 ">
             <div class="form-group">

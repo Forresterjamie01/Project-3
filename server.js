@@ -44,7 +44,7 @@ app.get("/api/user/:id", function (req, res){
 
 
 app.post("/api/signup", function (req, res){
-  console.log("posr",req.body);
+  console.log("post",req.body);
 
   db.User.create(req.body).then (function (response){
       console.log(response)

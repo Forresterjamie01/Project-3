@@ -39,6 +39,8 @@ function HomePage(props) {
         if(res.login){
           props.setloggedIn(true);
         }
+        window.location.href = "/search"
+
         // setEmail(res.data[1]);
         // setPassword(res.data[2][0]);
       
