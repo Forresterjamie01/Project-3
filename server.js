@@ -56,14 +56,23 @@ app.post("/api/signup", function (req, res){
 
 app.post("/api/login", function (req, res){
   console.log(req.body)
+  // {
+  //   email: "John@jogn.com",
+  //   password: "meow"
+  // }
   //find one 
   db.User.findOne({ where: { email: req.body.email} }).then(function(userData){
-    if (userData.password === req.body.password){
-      res.json({login: true})
-      //do we store passwords as plain text? Yes
-    }else {
-      res.json({login: false})
+    console.log("Found Usesrcc")
+    console.log(userData);
+    if(userData){
+      if (userData.password === req.body.password){
+        res.json({login: true})
+        //do we store passwords as plain text? Yes
+      }else {
+        res.json({login: false})
+      }
     }
+   
   });
 });
 

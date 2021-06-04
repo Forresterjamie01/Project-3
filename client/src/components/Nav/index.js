@@ -3,30 +3,30 @@ import React from "react";
 function Nav() {
 
   return (
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/">PluggedIn</a>
-      <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+<nav className="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+    <div className="container-fluid">
+      <a className="navbar-brand" href="/">PluggedIn</a>
+      <button className="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
       </button>
   
-      <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/main">Home</a>
+      <div className="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <li className="nav-item">
+            <a className="nav-link active" aria-current="page" href="/main">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/Connections">Plugs</a>
+          <li className="nav-item">
+            <a className="nav-link" href="/Connections">Plugs</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/Search">Work</a>
+          <li className="nav-item">
+            <a className="nav-link" href="/Search">Work</a>
           </li>
        
         
         </ul>
-        <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <form className="d-flex">
+        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+        <button className="btn btn-outline-success" type="submit">Search</button>
       </form>
       </div>
     </div>
