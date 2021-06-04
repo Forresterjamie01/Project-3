@@ -15,6 +15,8 @@ import SignUpPage from "./pages/signup";
 
 function App() {
   const [loggedIn, setloggedIn] = useState(false);
+  const [signedup, setSignedup] = useState(false);
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -32,7 +34,7 @@ function App() {
             </Route>
           <Route exact path="/main"><Main /></Route>
           <Route exact path="/signup">
-            {loggedIn ? <Redirect to="/search" /> : < SignUpPage logInStatus={loggedIn} setloggedIn={setloggedIn}/>}
+            {signedup ? <Redirect to="/search" /> : < SignUpPage logInStatus={loggedIn} setSignedup={setSignedup}/>}
           </Route>
         </Switch>
         <Footer />

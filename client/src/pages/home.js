@@ -9,12 +9,6 @@ function HomePage(props) {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
-
-    // const [location, setlocation] = useState("");
-    // const [mastering, setMastering] = useState("");
-    // const [mixing, setMixing] = useState("");
-    // const [production, setProduction] = useState("");
-
   const handleEmailchange = (event)=> {
     
     setEmail(event.target.value)

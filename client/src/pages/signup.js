@@ -56,8 +56,8 @@ function SignupPage(props) {
 
   /// a functon to handle the form submission
   const handleFormSubmit = () => {
-    //we need to get the values of email and password
-    if (!email) {
+    //we need to get the values of name, email, password, mastering, mixing, production
+    if (!name) {
       return;
     }
 
@@ -111,30 +111,27 @@ function SignupPage(props) {
           <div class="col-12">
             <div class="form-group">
               <div class="form-check">
-                <input class="form-check-input" value={mastering} onChange={handleMasteringchange} type="checkbox" value="" id="invalidCheck2"></input>
-                <label class="form-check-label" for="invalidCheck2">
-                  Mastering
-                </label>
+                  
+                  <input class="form-check-input" value={mastering} onChange={handleMasteringchange} type="checkbox" value="" id="invalidCheck2"></input>
+                  <label class="form-check-label" for="invalidCheck2">Mastering</label>
               </div>
             </div>
           </div>
           <div class="col-12">
             <div class="form-group">
               <div class="form-check">
-                <input class="form-check-input" value={mixing} onChange={handleMixingchange} type="checkbox" value="" id="invalidCheck2"></input>
-                <label class="form-check-label" for="invalidCheck2">
-                  Mixing
-                </label>
+                 
+                 <input class="form-check-input" value={mixing} onChange={handleMixingchange} type="checkbox" value="" id="invalidCheck2"></input>
+               <label class="form-check-label" for="invalidCheck2">Mixing</label>
               </div>
             </div>
           </div>
           <div class="col-12">
             <div class="form-group">
               <div class="form-check">
-                <input class="form-check-input" value={production} onChange={handleProductionchange} type="checkbox" value="" id="invalidCheck2" ></input>
-                <label class="form-check-label" for="invalidCheck2">
-                  Production
-                </label>
+                  <input class="form-check-input" value={production} onChange={handleProductionchange} type="checkbox" value="" id="invalidCheck2" ></input>
+                  <label class="form-check-label" for="invalidCheck2">Production</label>
+
               </div>
             </div>
           </div>
@@ -143,7 +140,7 @@ function SignupPage(props) {
 
 
           <div class="col-md-12 text-center mb-3">
-            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
+            <button type="submit" onClick={handleFormSubmit} class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
           </div>
           <div class="col-md-12 ">
             <div class="form-group">

@@ -22,7 +22,7 @@ class Search extends React.Component {
                         title: apiData[i].volumeInfo.title,
                         // authors: apiData[i].volumeInfo.authors[0] || "n/a",
                         description: apiData[i].volumeInfo.description,
-                        subtitle: apiData[i].volumeInfo.subtitle 
+                        subtitle: apiData[i].volumeInfo.subtitle
 
                     })
                 }
@@ -41,39 +41,68 @@ class Search extends React.Component {
             console.log(ele))
     }
 
-  savebook = (booksDetails)=> {
-      console.log (booksDetails) 
-      Axios.post("/api/books",booksDetails).then(savebook => {
-          console.log(savebook)
-      })
-      
-  }
+    savebook = (booksDetails) => {
+        console.log(booksDetails)
+        Axios.post("/api/books", booksDetails).then(savebook => {
+            console.log(savebook)
+        })
+
+    }
     render() {
         return (<main>
-            <h1>Search</h1>
+            <h1>Search for Your Next Connection</h1>
+            <section>
+                <form>
+                    <div className="col-12">
+                        <label className="form-label">Google Books:</label>
+                        <input type="text" value={this.state.searchString} onChange={this.getString} className="form-control" />
+                    </div>
+                    <div className="col-12">
+                        <button type="submit" onClick={this.getBooks} className="btn btn-primary">Search Books</button>
+                    </div>
 
-            <form>
-                <div className="col-md-2">
-                    <label className="form-label">Google Books:</label>
-                    <input type="text" value={this.state.searchString} onChange={this.getString} className="form-control" />
-                </div>
-                <div className="col-12">
-                    <button type="submit" onClick={this.getBooks} className="btn btn-primary">Search Books</button>
-                </div>
 
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                    <input type="text" class="form-control search-slt" placeholder="Enter Pickup City"></input>
+                        </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                        <input type="text" class="form-control search-slt" placeholder="Enter Drop City"></input>
+                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                            <select class="form-control search-slt" id="exampleFormControlSelect1">
+                                                <option>Select Vehicle</option>
+                                                <option>Example one</option>
+                                                <option>Example one</option>
+                                                <option>Example one</option>
+                                                <option>Example one</option>
+                                                <option>Example one</option>
+                                                <option>Example one</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                            <button type="button" class="btn btn-danger wrn-btn">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
 
+                        <br />
+                        {this.state.booksDetails.map((book, key) => {
+                            return (
+                                <Bookdetail book={book} key={key}
+                                    savebook={this.savebook}
+                                />
 
-            </form>
-            {this.state.booksDetails.map((book,key) => {
-                return(
-                   <Bookdetail book={book} key={key}
-                   savebook = {this.savebook}
-                   />
-                   
-                )
-            })}
+                            )
+                        })}
            
+            </section>
 
+                        
         </main>)
     }
 }
