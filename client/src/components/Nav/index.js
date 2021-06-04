@@ -15,17 +15,18 @@ function Nav() {
           <li className="nav-item">
             <a className="nav-link active" aria-current="page" href="/main">Home</a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/Connections">Plugs</a>
+            <li className="nav-item">
+            <a className="nav-link" href="/Search">Let's Work!</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/Search">Work</a>
+            <a className="nav-link" href="/Connections">My Plugs</a>
           </li>
+        
        
         
         </ul>
         <form className="d-flex">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+        <input className="form-control me-2" type="search" placeholder="Search for User" aria-label="Search"></input>
         <button className="btn btn-outline-success" type="submit">Search</button>
       </form>
       </div>

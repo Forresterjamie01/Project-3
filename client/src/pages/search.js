@@ -49,61 +49,63 @@ class Search extends React.Component {
 
     }
     render() {
-        return (<main>
-            <h1>Search for Your Next Connection</h1>
-            <section>
+
+        return (<body>
+            <div class="s01">
                 <form>
-                    <div className="col-12">
-                        <label className="form-label">Google Books:</label>
-                        <input type="text" value={this.state.searchString} onChange={this.getString} className="form-control" />
-                    </div>
-                    <div className="col-12">
-                        <button type="submit" onClick={this.getBooks} className="btn btn-primary">Search Books</button>
-                    </div>
+                    <fieldset>
+                        <legend>Search for Your Next Connection</legend>
+                    </fieldset>
+                    <div className="inner-form">
 
-
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                    <input type="text" class="form-control search-slt" placeholder="Enter Pickup City"></input>
+                        <div class="input-field second-wrap">
+                        <input type="text" value={this.state.searchString} onChange={this.getString} className="form-control" placeholder="Enter Your Location" />
+                       </div>
+                        <div class="input-field third-wrap">
+                            <select className="form-control search-slt" id="exampleFormControlSelect1">
+                                <option>Need Mastering?</option>
+                                <option>Yes, I need Mastering help.</option>
+                                <option>No, I do not need Mastering help.</option>
+                            </select>
                         </div>
-                                    <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                        <input type="text" class="form-control search-slt" placeholder="Enter Drop City"></input>
+                        <div class="input-field third-wrap">
+                            <select className="form-control search-slt" id="exampleFormControlSelect1">
+                                <option>Need Mixing?</option>
+                                <option>Yes, I need help with Mixing.</option>
+                                <option>No, I do not need help with Mixing.</option>
+                            </select>
                         </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                            <select class="form-control search-slt" id="exampleFormControlSelect1">
-                                                <option>Select Vehicle</option>
-                                                <option>Example one</option>
-                                                <option>Example one</option>
-                                                <option>Example one</option>
-                                                <option>Example one</option>
-                                                <option>Example one</option>
-                                                <option>Example one</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-lg-3 col-md-3 col-sm-12 p-0">
-                                            <button type="button" class="btn btn-danger wrn-btn">Search</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                        <div class="input-field third-wrap">
+                            <select className="form-control search-slt" id="exampleFormControlSelect1">
+                                <option>Need Production?</option>
+                                <option>Yes, I need Production Help.</option>
+                                <option>No, I do not need Production help.</option>
+                            </select>
+                        </div>
+                     
 
-                        <br />
-                        {this.state.booksDetails.map((book, key) => {
-                            return (
-                                <Bookdetail book={book} key={key}
-                                    savebook={this.savebook}
-                                />
+                       
+                        <div class="input-field third-wrap">
+                            <button onClick={this.getBooks} class="btn-search" type="button">Search</button>
+                        </div>
+                    </div>
+                </form>
 
-                            )
-                        })}
-           
+            </div>
+            <section>
+                <br />
+                {this.state.booksDetails.map((book, key) => {
+                    return (
+                        <Bookdetail book={book} key={key}
+                            savebook={this.savebook}
+                        />
+
+                    )
+                })}
             </section>
 
-                        
-        </main>)
+
+        </body>)
     }
 }
 
