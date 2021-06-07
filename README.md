@@ -1,64 +1,28 @@
-Google Books Search
+PluggedIn: Project 3, React Application
 
 Overview
-In this homework, you'll create a new React-based Google Books Search app. This assignment requires you to create React components, work with helper/util functions, and utilize React lifecycle methods to query and display books based on user searches. You'll also use Node, Express and MongoDB so that users can save books to review or purchase later.
-
-Commits
-Having an active and healthy commit history on GitHub is important for your future job search. It is also extremely important for making sure your work is saved in your repository. If something breaks, committing often ensures you are able to go back to a working version of your code.
+This project, is a new React-based User Search and Connect app. This application includes  React components, works with helper/util functions, and utilizes React lifecycle methods to query and displays users based on user searches. This app also uses Node, Express and mySQL so that users can save users to review or connect with later.
 
 
-Committing often is a signal to employers that you are actively working on your code and learning.
+
+How it Works 
 
 
-We use the mantra “commit early and often.”  This means that when you write code that works, add it and commit it!
-
-
-Numerous commits allow you to see how your app is progressing and give you a point to revert to if anything goes wrong.
+This application allows the user to signup, login and search for potential artists, freelancers and entrepreneur connections. 
 
 
 
 
-Be clear and descriptive in your commit messaging.
-
-When writing a commit message, avoid vague messages like "fixed." Be descriptive so that you and anyone else looking at your repository knows what happened with each commit.
-
-
-
-We would like you to have well over 200 commits by graduation, so commit early and often!
-
-
-
-Submission on BCS
-
-Please submit both the deployed Heroku link to your homework AND the link to the Github Repository!
-
-
-Instructions
-
-
-This application requires at minimum 2 pages, check out the following mockup images for each page:
-
-
-Search - User can search for books via the Google Books API and render them here. User has the option to "View" a book, bringing them to the book on Google Books, or "Save" a book, saving it to the Mongo database.
-
-
-Saved - Renders all books saved to the Mongo database. User has an option to "View" the book, bringing them to the book on Google Books, or "Delete" a book, removing it from the Mongo database.
+Search - User can search for other users via the RandomUser API and render them here. User has the option to "View" a user or "Save" a user, saving it to the mySQL database.I used the randomuser api to get random user data for the user to simulate the user searching and connecting with other users. These mock connections simulate users who are in the database that have also signedup Previously with PluggedIn. Users are able to search by city, state and country. Users can also view personal info and see and image of all the users they search.
 
 
 
 
+Saved - Renders all users saved to the mySQL database. User has an option to "View" the user.
 
 
-Start by using the 01-Ins_Mern example as a base for your application.
 
-
-Add code to connect to a MongoDB database named googlebooks using the mongoose npm package.
-
-
-Using mongoose, then create a Book schema.
-
-
-At a minimum, books should have each of the following fields:
+User has each of the following fields:
 
 
 
