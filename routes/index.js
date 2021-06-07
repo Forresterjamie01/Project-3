@@ -1,5 +1,8 @@
 const router = require('express').Router();
 const apiRoutes = require('./api');
+import axios from "axios";
+import React from "react";
+
 
 router.use('/api', apiRoutes);
 
@@ -30,9 +33,9 @@ router.get("/api/books", function (req, res) {
     res.json([])
   });
   
-  router.get("/api/google", function (req, res) {
+  router.get("/api/users/randomuser", function (req, res) {
     // use axios to make a querry to google api endpoint for a specific book
-    axios.get("https://www.googleapis.com/books/v1/volumes?q="+req.query.book).then(function(data){
+    axios.get("https://randomuser.me/api/?results=500"+req.query.book).then(function(data){
       res.json(data.data.items)
     })
     console.log("req.query",req.query);

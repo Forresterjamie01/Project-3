@@ -3,16 +3,16 @@ import Axios from "axios";
 
 class Connections extends React.Component {
     state = {
-        savebooks: []
+        saveusers: []
     }
 
     componentDidMount = () => {
-        Axios.get("/api/books")
+        Axios.get("/api/randomuser")
             .then(records => {
                 console.log("Records", records)
-                let savebooks = records.data
+                let saveusers = records.data
                 this.setState({
-                    savebooks: savebooks
+                    saveusers: saveusers
                 })
             })
     }
@@ -95,7 +95,7 @@ class Connections extends React.Component {
 
 
             {
-            this.state.savebooks.map((ele, key) => {
+            this.state.saveusers.map((ele, key) => {
                 return (
                     <div className="card-body">
                         <h5 className="card-title">{ele.title}</h5>

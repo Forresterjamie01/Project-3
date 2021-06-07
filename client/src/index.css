@@ -157,7 +157,7 @@ body {
 	margin-right: 0;
   }
   
-  .s01 form .inner-form .input-field.third-wrap .btn-search {
+  .s01 form .inner-form .input-field.fourth-wrap .btn-search {
 	height: 100%;
 	width: 100%;
 	background: #4272d7;
@@ -170,7 +170,7 @@ body {
 	cursor: pointer;
   }
   
-  .s01 form .inner-form .input-field.third-wrap .btn-search:hover {
+  .s01 form .inner-form .input-field.fourth-wrap .btn-search:hover {
 	background: #2d62d3;
   }
   
@@ -213,7 +213,7 @@ body {
 	.s01 form .inner-form .input-field.third-wrap {
 	  width: calc(50% - 10px);
 	}
-	.s01 form .inner-form .input-field.third-wrap .btn-search {
+	.s01 form .inner-form .input-field.fourth-wrap .btn-search {
 	  font-size: 16px;
 	}
   }

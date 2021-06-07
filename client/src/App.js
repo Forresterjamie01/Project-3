@@ -7,7 +7,6 @@ import Main from "./pages/main";
 
 import Footer from "./components/footer";
 import "./App.css";
-import Jumbotron from "./components/Jumbotron";
 import Nav from "./components/Nav";
 import SignUpPage from "./pages/signup";
 
@@ -21,10 +20,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Nav />
-        <Jumbotron>
-          <h1>Google Books Search</h1>
-          <p>Using Google API</p>
-        </Jumbotron>
         <Switch>
           <Route exact path="/connections"><Connections /></Route>
           <Route exact path="/search"><Search /></Route>
