@@ -1,6 +1,6 @@
 import React from "react";
 import Axios from "axios";
-// import Bookdetail from "../components/Bookdetai";
+import UserDetail from "../components/userdetail";
 
 class Search extends React.Component {
     state = {
@@ -8,34 +8,36 @@ class Search extends React.Component {
         userDatabase: [],
         searchString: ""
     }
-   componentDidMount = () => {
-       this.getUsers()
-   }
-    getUsers = () => {
-      
+    // componentDidMount = () => {
+    //     this.getUsers()
+    // }
+    getUsers = (event) => {
+        event.preventDefault()
         let searchStr = this.state.searchString
-        Axios.get(`https://randomuser.me/api/?results=200`)
+        Axios.get(`https://randomuser.me/api/?results=200${searchStr}`)
             .then(records => {
                 console.log("Records", records)
                 let usersData = []
                 let apiData = records.data.results
                 for (let i = 0; i < apiData.length; i++) {
                     usersData.push({
-                    name: apiData[i].name.title +", "+apiData[i].name.first+", "+apiData[i].name.last,
-                    nat:apiData[i].nat,
-                    email: apiData[i].email,
-                    cell:apiData[i].cell,
-                    city: apiData[i].location.city,
-                    state: apiData[i].location.state,
-                    country:apiData[i].location.country,
-                    postcode:apiData[i].location.postcode,
+                        
+                        name: apiData[i].name.title + ", " + apiData[i].name.first + ", " + apiData[i].name.last,
+                        nat: apiData[i].nat,
+                        img: apiData[i].picture.medium,
+                        email: apiData[i].email,
+                        cell: apiData[i].cell,
+                        city: apiData[i].location.city,
+                        state: apiData[i].location.state,
+                        country: apiData[i].location.country,
+                        postcode: apiData[i].location.postcode,
                     })
                 }
                 this.setState({
-                    usersDetails: usersData,
-                    usersDatabase: usersData
+                    userDetails: usersData,
+                    userDatabase: usersData
                 })
-                console.log("state", this.state.usersDetails)
+                console.log("state", this.state.userDetails)
             })
 
     }
@@ -46,10 +48,10 @@ class Search extends React.Component {
             console.log(ele))
     }
 
-    saveusers = (usersDetails) => {
-        console.log(usersDetails)
-        Axios.post("/api/users", usersDetails).then(saveuser => {
-            console.log(saveuser)
+    saveusers = (userDetails) => {
+        console.log(userDetails)
+        Axios.post("/api/users", userDetails).then(saveusers => {
+            console.log(saveusers)
         })
 
     }
@@ -67,11 +69,11 @@ class Search extends React.Component {
                             <input type="text" value={this.state.searchString} onChange={this.getString} className="form-control" placeholder="Enter Your City" />
                         </div>
                         <div className="input-field second-wrap">
-                            <input type="text" className="form-control" placeholder="Enter Your State" />
+                            <input type="text" className="form-control"  placeholder="Enter Your State" />
                         </div>
-                     
+
                         <div className="input-field second-wrap">
-                            <select className="form-control search-slt" id="exampleFormControlSelect1">
+                            <select className="form-control search-slt"  id="exampleFormControlSelect1">
                                 <option>Enter Your Country of Origin / Nationality</option>
                                 <option value="AF">Afghanistan</option>
                                 <option value="AX">Aland Islands</option>
@@ -332,7 +334,7 @@ class Search extends React.Component {
 
 
                         <div className="input-field fourth-wrap">
-                            <button onClick={this.getusers} className="btn-search" type="button">Search</button>
+                            <button onClick={this.getUsers} className="btn-search" type="button">Search</button>
                         </div>
                     </div>
                 </form>
@@ -340,14 +342,14 @@ class Search extends React.Component {
             </div>
             <section>
                 <br />
-                {/* {this.state.usersDetails.map((book, key) => {
+                {this.state.userDetails.map((user, key) => {
                     return (
-                        <Bookdetail book={book} key={key}
-                            saveusers={this.savebook}
+                        <UserDetail user={user} key={key}
+                            savseusers={this.saveusers}
                         />
 
                     )
-                })} */}
+                })}
             </section>
 
 

@@ -97,52 +97,52 @@ function SignupPage(props) {
 
   return (<body>
     <div id="second align-items-center">
-      <div class="myform form ">
-        <div class="logo mb-3">
-          <div class="col-md-12 text-center">
+      <div className="myform form ">
+        <div className="logo mb-3">
+          <div className="col-md-12 text-center">
             <h1 >Signup</h1>
           </div>
         </div>
         <form action="#" name="registration">
-          <div class="form-group">
+          <div className="form-group">
             <label for="exampleInputName">Name</label>
-            <input type="text" name="name" value={name} onChange={handleNamechange} class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Name"></input>
+            <input type="text" name="name" value={name} onChange={handleNamechange} className="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter Name"></input>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" name="email" value={email} onChange={handleEmailchange} class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter Email"></input>
           </div>
           <div class="form-group">
             <label for="exampleInputPassword">Password</label>
-            <input type="password" name="password" value={password} onChange={handlePasswordchange} id="password" class="form-control" aria-describedby="passwordhelp" placeholder="Enter Password"></input>
+            <input type="password" name="password" value={password} onChange={handlePasswordchange} id="password" className="form-control" aria-describedby="passwordhelp" placeholder="Enter Password"></input>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label for="exampleInputLocation">Location</label>
-            <input type="text" name="location" value={location} onChange={handleLocationchange} id="password" class="form-control" aria-describedby="locationhelp" placeholder="Enter Location"></input>
+            <input type="text" name="location" value={location} onChange={handleLocationchange} id="password" className="form-control" aria-describedby="locationhelp" placeholder="Enter Location"></input>
           </div>
-          <div class="col-12">
-            <div class="form-group">
-              <div class="form-check">
+          <div className="col-12">
+            <div className="form-group">
+              <div className="form-check">
                   
-                  <input class="form-check-input" value={mastering} onChange={handleMasteringchange} type="checkbox" value="" id="invalidCheck2"></input>
-                  <label class="form-check-label" for="invalidCheck2">Mastering</label>
+                  <input className="form-check-input" value={mastering} onChange={handleMasteringchange} type="checkbox" value="" id="invalidCheck2"></input>
+                  <label className="form-check-label" for="invalidCheck2">Mastering</label>
               </div>
             </div>
           </div>
-          <div class="col-12">
-            <div class="form-group">
-              <div class="form-check">
+          <div className="col-12">
+            <div className="form-group">
+              <div className="form-check">
                  
-                 <input class="form-check-input" value={mixing} onChange={handleMixingchange} type="checkbox" value="" id="invalidCheck2"></input>
-               <label class="form-check-label" for="invalidCheck2">Mixing</label>
+                 <input className="form-check-input" value={mixing} onChange={handleMixingchange} type="checkbox" value="" id="invalidCheck2"></input>
+               <label className="form-check-label" for="invalidCheck2">Mixing</label>
               </div>
             </div>
           </div>
-          <div class="col-12">
-            <div class="form-group">
-              <div class="form-check">
-                  <input class="form-check-input" value={production} onChange={handleProductionchange} type="checkbox" value="" id="invalidCheck2" ></input>
-                  <label class="form-check-label" for="invalidCheck2">Production</label>
+          <div className="col-12">
+            <div className="form-group">
+              <div className="form-check">
+                  <input className="form-check-input" value={production} onChange={handleProductionchange} type="checkbox" value="" id="invalidCheck2" ></input>
+                  <label className="form-check-label" for="invalidCheck2">Production</label>
 
               </div>
             </div>
@@ -151,12 +151,12 @@ function SignupPage(props) {
 
 
 
-          <div class="col-md-12 text-center mb-3">
-            <button type="button" onClick={handleFormSubmit} class=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
+          <div className="col-md-12 text-center mb-3">
+            <button type="button" onClick={handleFormSubmit} className=" btn btn-block mybtn btn-primary tx-tfm">Get Started For Free</button>
           </div>
-          <div class="col-md-12 ">
-            <div class="form-group">
-              <p class="text-center"><a href="/" id="signin">Already have an account?</a></p>
+          <div className="col-md-12 ">
+            <div className="form-group">
+              <p className="text-center"><a href="/" id="signin">Already have an account?</a></p>
             </div>
           </div>
         </form>

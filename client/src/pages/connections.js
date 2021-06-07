@@ -7,7 +7,7 @@ class Connections extends React.Component {
     }
 
     componentDidMount = () => {
-        Axios.get("/api/randomuser")
+        Axios.get("/api/users/randomuser")
             .then(records => {
                 console.log("Records", records)
                 let saveusers = records.data
@@ -20,8 +20,8 @@ class Connections extends React.Component {
     render() {
         return (<main>
 
-            
-            <section className="py-5 text-center container">
+
+            {/* <section className="py-5 text-center container">
                 <div className="row py-lg-5">
                     <div className="col-lg-6 col-md-8 mx-auto">
                         <h1 className="fw-light">My Connections</h1>
@@ -38,7 +38,7 @@ class Connections extends React.Component {
                 <div className="container">
 
                     <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                
+
                         <div className="col">
                             <div className="card shadow-sm">
                                 <svg className="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Artist Image</text></svg>
@@ -59,10 +59,10 @@ class Connections extends React.Component {
                             <div className="card shadow-sm">
                                 <svg className="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c" /><text x="50%" y="50%" fill="#eceeef" dy=".3em">Artist Image</text></svg>
 
-                                <div class="card-body">
+                                <div className="card-body">
                                     <p className="card-text">Artist Info Populated Here.</p>
                                     <div className="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
+                                        <div className="btn-group">
                                             <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
                                             <button type="button" className="btn btn-sm btn-outline-secondary">Connect</button>
                                         </div>
@@ -89,24 +89,31 @@ class Connections extends React.Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
-            
+
 
 
             {
-            this.state.saveusers.map((ele, key) => {
-                return (
-                    <div className="card-body">
-                        <h5 className="card-title">{ele.title}</h5>
-                        <p className="card-text">{ele.description}</p>
-                        {/* <p className="btn btn-primary">{book.authors}</p> */}
+                this.state.saveusers.map((props) => {
+                    return (<div className="bg-white text-black card border ">
+                        <div className="card-body">
+                            <img src={props.user.img} alt="bio pic"></img>
+                            <h5 className="card-title text-black">{props.user.name}</h5>
+                            <h6 className="card-title test-black">{props.user.nat}</h6>
+                            <p>{props.user.email}</p>
+                            <p >{props.user.cell}</p>
+                            <p >{props.user.city}</p>
+                            <p >{props.user.state}</p>
+                            <p >{props.user.country}</p>
+                            <p >{props.user.postcode}</p>
+                            
 
-
+                        </div>
                     </div>
-                )
-            })
-        }
+                    )
+                })
+            }
         </main >)
     }
 }

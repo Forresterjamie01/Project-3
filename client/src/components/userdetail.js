@@ -1,13 +1,32 @@
 import React from "react";
 
-function Userdetail  (props)  {
-    return (<div>
-        <div className="card-body">
-            <h5 className="card-title">{props.book.title}</h5>
-            <p className="card-text">{props.book.description}</p>
-            {/* <p className="btn btn-primary">{book.authors}</p> */}
+function UserDetails(props) {
+    let user = {
+        name: props.user.name,
 
-            <button onClick={() => props.saveuser({title:props.book.title,description:props.book.description})} className="btn btn-primary">Save Book</button>
+        email: props.user.email,
+        cell: props.user.cell,
+        city: props.user.city,
+        state: props.user.state,
+        country: props.user.country,
+        postcode: props.user.postcode,
+        img: props.user.img
+    }
+    console.log(user)
+    return (<div className="bg-white text-black card border ">
+        <div className="card-body">
+            <img src={props.user.img} alt="bio pic"></img>
+            <h5 className="card-title text-black">{props.user.name}</h5>
+            <h6 className="card-title test-black">Nationality: {props.user.nat}</h6>
+            <p>Email: {props.user.email}</p>
+            <p >Cell: {props.user.cell}</p>
+            <p >City: {props.user.city}</p>
+            <p >State: {props.user.state}</p>
+            <p >Country: {props.user.country}</p>
+            <p >Zipcode: {props.user.postcode}</p>
+            
+
+            <button onClick={() => props.saveusers(user)} className="btn btn-primary">Save </button>
 
         </div>
 
@@ -15,4 +34,4 @@ function Userdetail  (props)  {
 }
 
 
-export default Userdetail
+export default UserDetails;
